@@ -1,0 +1,27 @@
+<section>
+    <nav>
+        <ul>
+            <li *ngFor="let category of categories">
+                <input type="button" id="category" name="category" value="{{category}}" (click)="choiceCategory(category)">
+            </li>
+        </ul>
+    </nav>
+</section>
+
+<section [ngSwitch]="options">
+    
+</section>
+<!--  
+<ul>
+    <li *ngIf="products.length === 0">No hay productos</li>
+    <li *ngIf="products.status === true">
+        <div *ngFor="let product of products">
+            {{name}}
+        {{code}}
+        {{characteristic}}
+        {{price}}
+        {{type}}
+        {{status}}
+        </div>
+    </li>
+</ul>-->

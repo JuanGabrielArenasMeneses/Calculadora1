@@ -10,6 +10,7 @@ import { PlusComponent } from './components/calculator/plus/plus.component';
 import { MinusComponent } from './components/calculator/minus/minus.component';
 import { MultiplicateComponent } from './components/calculator/multiplicate/multiplicate.component';
 import { DivideComponent } from './components/calculator/divide/divide.component';
+import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DivideComponent } from './components/calculator/divide/divide.component
     PlusComponent,
     MinusComponent,
     MultiplicateComponent,
-    DivideComponent
+    DivideComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
