@@ -11,6 +11,10 @@ import { MinusComponent } from './components/calculator/minus/minus.component';
 import { MultiplicateComponent } from './components/calculator/multiplicate/multiplicate.component';
 import { DivideComponent } from './components/calculator/divide/divide.component';
 import { ProductsComponent } from './components/products/products.component';
+import { CatalogoComponent } from './components/products/catalogo/catalogo.component';
+import { ImagenArticulosServiciosComponent } from './components/products/imagen-articulos-servicios/imagen-articulos-servicios.component';
+import { DetallesArticulosComponent } from './components/products/detalles-articulos/detalles-articulos.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +25,10 @@ import { ProductsComponent } from './components/products/products.component';
     MinusComponent,
     MultiplicateComponent,
     DivideComponent,
-    ProductsComponent
+    ProductsComponent,
+    CatalogoComponent,
+    ImagenArticulosServiciosComponent,
+    DetallesArticulosComponent
   ],
   imports: [
     BrowserModule,
