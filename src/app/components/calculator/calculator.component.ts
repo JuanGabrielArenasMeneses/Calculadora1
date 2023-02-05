@@ -11,6 +11,7 @@ import { PlusComponent } from "./plus/plus.component";
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
+  
   result: number=0;
   number1: string='';
   number2: string='';
