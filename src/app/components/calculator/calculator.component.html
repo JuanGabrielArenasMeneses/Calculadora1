@@ -25,7 +25,7 @@
         </div>
         <input type="button" class="number" value="+/-" id="negate" (click)="negate() ">
         <input type="button" class="number" value="0" id="zero" (click)="addNumber($event) ">
-        <input type="button" class="number" value="," id="coma" (click)="addNumber($event) ">
+        <input type="button" class="number" value="." id="dot" (click)="addNumber($event) ">
         <div>
             <app-plus [num1]="number1" [num2]="number1" (click)="plus()"></app-plus>
         </div>
