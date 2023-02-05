@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-equals',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./equals.component.css']
 })
 export class EqualsComponent implements OnInit {
+  @Input() num: string='';
+  number1: number=0;
+  number2: number=0;
 
   constructor() { }
 

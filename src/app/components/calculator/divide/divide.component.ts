@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-divide',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./divide.component.css']
 })
 export class DivideComponent implements OnInit {
-
+  @Input() num: string='';
+  number1: number=0;
+  number2: number=0;
   constructor() { }
 
   ngOnInit(): void {
+    
   }
+  ngOnChange(){
+  console.log(this.num);
 
+  }
 }

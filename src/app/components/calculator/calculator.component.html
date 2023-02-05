@@ -1,54 +1,40 @@
-<form class="calculator" id="calcular" [formGroup]="calculadoraForm" (ngSubmit)="calcular()">
+<section class="calculator" id="calcular" >
     <div class="result-bar">
         <label>resultado</label>
         <p>{{this.result}}</p>    
     </div>
-    <div>
-        <input type="button" class="operator-out" value="C" id="Delete">
-    </div>
+    
     <section class="Controlls">
-        <input type="button" class="number" value="7" id="seven">
-        <input type="button" class="number" value="8" id="eight">
-        <input type="button" class="number" value="9" id="nine">
-        <div>
-            <app-divide></app-divide>
-        </div>
-        <input type="button" class="number" value="4" id="four">
-        <input type="button" class="number" value="5" id="five">
-        <input type="button" class="number" value="6" id="six">
+        <input type="button" class="number" value="7" id="seven" (click)="addNumber($event)">
+        <input type="button" class="number" value="8" id="eight" (click)="addNumber($event) ">
+        <input type="button" class="number" value="9" id="nine" (click)="addNumber($event) ">
+        
+            <app-divide [num]="number1"></app-divide>
+        
+        <input type="button" class="number" value="4" id="four" (click)="addNumber($event) ">
+        <input type="button" class="number" value="5" id="five" (click)="addNumber($event) ">
+        <input type="button" class="number" value="6" id="six" (click)="addNumber($event) ">
         <div>
             <app-multiplicate></app-multiplicate>
         </div>
-        <input type="button" class="number" value="1" id="one">
-        <input type="button" class="number" value="2" id="two">
-        <input type="button" class="number" value="3" id="three">
+        <input type="button" class="number" value="1" id="one" (click)="addNumber($event) ">
+        <input type="button" class="number" value="2" id="two" (click)="addNumber($event) ">
+        <input type="button" class="number" value="3" id="three" (click)="addNumber($event) ">
         <div>   
             <app-minus></app-minus>
         </div>
-        <input type="button" class="number" value="+/-" id="negate">
-        <input type="button" class="number" value="0" id="zero">
-        <input type="button" class="number" value="," id="coma">
+        <input type="button" class="number" value="+/-" id="negate" (click)="negate() ">
+        <input type="button" class="number" value="0" id="zero" (click)="addNumber($event) ">
+        <input type="button" class="number" value="," id="coma" (click)="addNumber($event) ">
         <div>
             <app-plus></app-plus>
         </div>
+        <input type="button" class="number" value="%" id="percent" (click)="percent ">
+        <input type="button" class="number" value="C" id="clear" (click)="clear() ">
+        <input type="button" class="number" value="D" id="delete" (click)="delete() ">
+        <div>
+            <app-equals></app-equals>
+        </div>
     </section>
-    
-    
-    
-    <div>
-        <label>valor 1</label>
-        <input formControlName="number1" id="value1">
-    </div>
-    <div>
-        <label>valor 2</label>
-        <input formControlName="number2" id="value2">
-    </div>
-    
-    <div>
-        <button type="submit" form="calcular">Calcular</button>
-        <button type="reset" >Limpiar</button>
-    </div>
-</form>
-<section>
     
 </section>
