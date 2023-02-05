@@ -16,11 +16,13 @@ export class CalculatorComponent implements OnInit {
   private minusNum = new MinusComponent();
   private multiplNum = new MultiplicateComponent();
   private plusNum = new PlusComponent();
-  result: number=0;
+  result: string='';
   number1: string='';
   number2: string='';
   flag: boolean=false;
   operation:number=0;
+  operator: string='';
+  resultShow:string=this.number1+this.operator+this.number2+'=\n'+this.result;
     constructor() { 
       
     }
@@ -28,18 +30,21 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
     
   }
+  ngOnChange(){
+    this.result=this.number1+this.operator+this.number2+'=\n'+this.result;
+  }
   
   addNumber(event: Event): void {
     const element= event.target as HTMLInputElement;
     console.log (element.value);
+    this.number1!=''&&this.number2!=''?console.log('resultado limpio'):this.result='';
     if (!(this.flag)) {
-      this.number1=this.number1+element.value;
-      console.log ('number 1 '+this.number1);
-    } else {
-      this.number2=this.number2+element.value;
-      console.log ('number 2 '+this.number2);
-    }
-    
+        this.number1=this.number1+element.value;
+        console.log ('number 1 '+this.number1);
+      } else {
+        this.number2=this.number2+element.value;
+        console.log ('number 2 '+this.number2);
+      }
     
   }
   negate(): void {
@@ -58,7 +63,8 @@ export class CalculatorComponent implements OnInit {
     
       this.number2= '';
       console.log ('number 2 '+this.number2);
-    
+      this.operator='';
+      this.flag=false;    
   }
   delete(): void {
     if (!(this.flag)) {
@@ -80,6 +86,7 @@ export class CalculatorComponent implements OnInit {
   plus(): void{
     this.number1!=''?this.flag=true : this.flag=false;
     this.operation=1;
+    this.operator='+';
     console.log("operacion sumar");
     
     //this.plusNum.plusNumbers
@@ -87,6 +94,7 @@ export class CalculatorComponent implements OnInit {
   minus(): void{
     this.number1!=''?this.flag=true : this.flag=false;
     this.operation=2;
+    this.operator='-';
     console.log("operacion restar");
     
     //this.minusNum.minsNumbers
@@ -94,6 +102,7 @@ export class CalculatorComponent implements OnInit {
   multiplicate(): void{
     this.number1!=''?this.flag=true : this.flag=false;
     this.operation=3;
+    this.operator='*';
     console.log("operacion multiplicar");
     
     //this.multiplNum.multiplicateNumbers
@@ -101,6 +110,7 @@ export class CalculatorComponent implements OnInit {
   divide(): void{
     this.number1!=''?this.flag=true : this.flag=false;
     this.operation=4;
+    this.operator='/';
     console.log("operacion dividir");
     
       
@@ -111,22 +121,22 @@ export class CalculatorComponent implements OnInit {
     switch ( this.operation ) {
       case 1:
           // plus
-          this.plusNum.addNumbers(parseInt(this.number1),parseInt(this.number2));
+          this.result=this.plusNum.addNumbers(parseInt(this.number1),parseInt(this.number2));
           this.clear();
           break;
       case 2:
           // minus
-          this.minusNum.subtractNumbers(parseInt(this.number1),parseInt(this.number2));
+          this.result=this.minusNum.subtractNumbers(parseInt(this.number1),parseInt(this.number2));
           this.clear();
           break;
       case 3:
           // multiplicate
-          this.multiplNum.multipliateNumbers(parseInt(this.number1),parseInt(this.number2));
+          this.result=this.multiplNum.multipliateNumbers(parseInt(this.number1),parseInt(this.number2));
           this.clear();
           break;
       case 4:
           // divide
-          this.divideNum.divideNumbers(parseInt(this.number1),parseInt(this.number2));
+          this.result=this.divideNum.divideNumbers(parseInt(this.number1),parseInt(this.number2));
           this.clear();
           break;
       default: 
