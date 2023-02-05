@@ -11,7 +11,11 @@ import { PlusComponent } from "./plus/plus.component";
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
-  
+  private divideNum = new DivideComponent();
+  private equalsNum = new EqualsComponent();
+  private minusNum = new MinusComponent();
+  private multiplNum = new MultiplicateComponent();
+  private plusNum = new PlusComponent();
   result: number=0;
   number1: string='';
   number2: string='';
@@ -75,18 +79,20 @@ export class CalculatorComponent implements OnInit {
     
   }
   divide(): void{
-
+    this.divideNum.divideNumbers
+      
+    
   }
   equals(): void{
-
+    //this.equalsNum.equalsNumbers
   }
   minus(): void{
-
+    //this.minusNum.minsNumbers
   }
   multiplicate(): void{
-
+    //this.multiplNum.multiplicateNumbers
   }
   plus(): void{
-
+    //this.plusNum.plusNumbers
   }
 }
