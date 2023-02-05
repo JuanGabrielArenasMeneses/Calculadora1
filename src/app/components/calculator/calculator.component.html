@@ -9,31 +9,31 @@
         <input type="button" class="number" value="8" id="eight" (click)="addNumber($event) ">
         <input type="button" class="number" value="9" id="nine" (click)="addNumber($event) ">
         
-            <app-divide [num]="number1"></app-divide>
+            <app-divide [num1]="number1" [num2]="number1" (click)="divide()"></app-divide>
         
         <input type="button" class="number" value="4" id="four" (click)="addNumber($event) ">
         <input type="button" class="number" value="5" id="five" (click)="addNumber($event) ">
         <input type="button" class="number" value="6" id="six" (click)="addNumber($event) ">
         <div>
-            <app-multiplicate></app-multiplicate>
+            <app-multiplicate [num1]="number1" [num2]="number1" (click)="multiplicate()"></app-multiplicate>
         </div>
         <input type="button" class="number" value="1" id="one" (click)="addNumber($event) ">
         <input type="button" class="number" value="2" id="two" (click)="addNumber($event) ">
         <input type="button" class="number" value="3" id="three" (click)="addNumber($event) ">
         <div>   
-            <app-minus></app-minus>
+            <app-minus [num1]="number1" [num2]="number1" (click)="minus()"></app-minus>
         </div>
         <input type="button" class="number" value="+/-" id="negate" (click)="negate() ">
         <input type="button" class="number" value="0" id="zero" (click)="addNumber($event) ">
         <input type="button" class="number" value="," id="coma" (click)="addNumber($event) ">
         <div>
-            <app-plus></app-plus>
+            <app-plus [num1]="number1" [num2]="number1" (click)="plus()"></app-plus>
         </div>
         <input type="button" class="number" value="%" id="percent" (click)="percent ">
         <input type="button" class="number" value="C" id="clear" (click)="clear() ">
         <input type="button" class="number" value="D" id="delete" (click)="delete() ">
         <div>
-            <app-equals></app-equals>
+            <app-equals (click)="equals()"></app-equals>
         </div>
     </section>
     

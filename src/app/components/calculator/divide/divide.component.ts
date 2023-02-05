@@ -1,4 +1,4 @@
-import { Component, OnInit,Input, Output } from '@angular/core';
+import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-divide',
@@ -6,7 +6,9 @@ import { Component, OnInit,Input, Output } from '@angular/core';
   styleUrls: ['./divide.component.css']
 })
 export class DivideComponent implements OnInit {
-  @Input() num: string='';
+  @Output() flagChanged= new EventEmitter();
+  @Input() num1: string='';
+  @Input() num2: string='';
   number1: number=0;
   number2: number=0;
   constructor() { }
@@ -15,7 +17,9 @@ export class DivideComponent implements OnInit {
     
   }
   ngOnChange(){
-  console.log(this.num);
+  console.log(this.num1);
+  }
+  divideNumbers(){
 
   }
 }

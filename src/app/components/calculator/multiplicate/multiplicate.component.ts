@@ -1,4 +1,4 @@
-import { Component, OnInit,Input, Output } from '@angular/core';
+import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-multiplicate',
@@ -6,7 +6,9 @@ import { Component, OnInit,Input, Output } from '@angular/core';
   styleUrls: ['./multiplicate.component.css']
 })
 export class MultiplicateComponent implements OnInit {
-  @Input() num: string='';
+  @Output() flagChanged= new EventEmitter();
+  @Input() num1: string='';
+  @Input() num2: string='';
   number1: number=0;
   number2: number=0;
 
@@ -14,5 +16,8 @@ export class MultiplicateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  ngOnChange(){
+    console.log(this.num1);
+  
+    }
 }

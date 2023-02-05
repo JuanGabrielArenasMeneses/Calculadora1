@@ -1,4 +1,9 @@
-import { Component, OnInit,Input, Output } from '@angular/core';
+import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
+import { DivideComponent } from "./divide/divide.component";
+import { EqualsComponent } from "./equals/equals.component";
+import { MinusComponent } from "./minus/minus.component";
+import { MultiplicateComponent } from "./multiplicate/multiplicate.component";
+import { PlusComponent } from "./plus/plus.component";
 
 @Component({
   selector: 'app-calculator',
@@ -17,6 +22,7 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
     
   }
+  
   addNumber(event: Event): void {
     const element= event.target as HTMLInputElement;
     console.log (element.value);
@@ -66,5 +72,20 @@ export class CalculatorComponent implements OnInit {
   } 
   percent(): void {
     
-  } 
+  }
+  divide(): void{
+
+  }
+  equals(): void{
+
+  }
+  minus(): void{
+
+  }
+  multiplicate(): void{
+
+  }
+  plus(): void{
+
+  }
 }
