@@ -6,7 +6,7 @@ import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./multiplicate.component.css']
 })
 export class MultiplicateComponent implements OnInit {
-  @Output() flagChanged= new EventEmitter();
+  @Output() operationResult= new EventEmitter();
   @Input() num1: string='';
   @Input() num2: string='';
   number1: number=0;
@@ -18,6 +18,12 @@ export class MultiplicateComponent implements OnInit {
   }
   ngOnChange(){
     console.log(this.num1);
+  
+    }
+    multipliateNumbers(number1:number, number2:number): string{
+      let operationResult:string='';
+      console.log(operationResult=String(number1*number2));
+      return operationResult=String(number1*number2);
   
     }
 }

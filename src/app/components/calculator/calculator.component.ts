@@ -20,6 +20,7 @@ export class CalculatorComponent implements OnInit {
   number1: string='';
   number2: string='';
   flag: boolean=false;
+  operation:number=0;
     constructor() { 
       
     }
@@ -75,21 +76,64 @@ export class CalculatorComponent implements OnInit {
   percent(): void {
     
   }
+  
+  plus(): void{
+    this.number1!=''?this.flag=true : this.flag=false;
+    this.operation=1;
+    console.log("operacion sumar");
+    
+    //this.plusNum.plusNumbers
+  }
+  minus(): void{
+    this.number1!=''?this.flag=true : this.flag=false;
+    this.operation=2;
+    console.log("operacion restar");
+    
+    //this.minusNum.minsNumbers
+  }
+  multiplicate(): void{
+    this.number1!=''?this.flag=true : this.flag=false;
+    this.operation=3;
+    console.log("operacion multiplicar");
+    
+    //this.multiplNum.multiplicateNumbers
+  }
   divide(): void{
-    this.divideNum.divideNumbers
+    this.number1!=''?this.flag=true : this.flag=false;
+    this.operation=4;
+    console.log("operacion dividir");
+    
       
     
   }
   equals(): void{
+    console.log("operacion igual");
+    switch ( this.operation ) {
+      case 1:
+          // plus
+          this.plusNum.addNumbers(parseInt(this.number1),parseInt(this.number2));
+          this.clear();
+          break;
+      case 2:
+          // minus
+          this.minusNum.subtractNumbers(parseInt(this.number1),parseInt(this.number2));
+          this.clear();
+          break;
+      case 3:
+          // multiplicate
+          this.multiplNum.multipliateNumbers(parseInt(this.number1),parseInt(this.number2));
+          this.clear();
+          break;
+      case 4:
+          // divide
+          this.divideNum.divideNumbers(parseInt(this.number1),parseInt(this.number2));
+          this.clear();
+          break;
+      default: 
+          // 
+          console.log("no hay operacion seleccionada");
+          break;
+   }
     //this.equalsNum.equalsNumbers
-  }
-  minus(): void{
-    //this.minusNum.minsNumbers
-  }
-  multiplicate(): void{
-    //this.multiplNum.multiplicateNumbers
-  }
-  plus(): void{
-    //this.plusNum.plusNumbers
   }
 }
